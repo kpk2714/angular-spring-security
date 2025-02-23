@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form #languageform="ngForm" (ngSubmit)="login(languageform)">
+      <label>Username:</label>
+      <input type="text" name="username" [(ngModel)]="loginData.username" #username="ngModel">
+  
+      <label>Password:</label>
+      <input type="password" name="password" [(ngModel)]="loginData.password" #password="ngModel">
+
+      <label>Remember Me:</label>
+      <input type="checkbox" name="rememberMe" [(ngModel)]="loginData.rememberMe" #rememberMe="ngModel">
+  
+      <button type="submit">Login</button>
+    </form>
+  
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
