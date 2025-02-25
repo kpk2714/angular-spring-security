@@ -17,11 +17,17 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  loginData = new LoginRequest();
+  loginData : any = new LoginRequest();
 
   login(loginTemp : any) {
+
+    const formData = new FormData();
+    formData.append("username", this.loginData.username);
+    formData.append("password", this.loginData.password);
+    formData.append("remember-me", this.loginData.rememberMe.toString());
+
     console.log("Login Data : -> "+this.loginData.username + '-' + this.loginData.password + '-' + this.loginData.rememberMe);
-    this.http.post('http://localhost:9898/login', this.loginData, { withCredentials: true })
+    this.http.post('http://localhost:9898/login', formData, { withCredentials: true })
       .subscribe({
         next: (response : any) => {
           console.log("RedirectUrl -> " + response.redirectUrl);
