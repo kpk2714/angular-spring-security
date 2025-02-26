@@ -40,7 +40,7 @@ export class StudentDashboardComponent implements OnInit {
           document.cookie = "JSESSIONID=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
           // Clear Cookies (Client-Side)
-          //this.deleteAllCookies();
+          this.deleteAllCookies();
 
           // Redirect to Login Page
           this.router.navigate(['/login']);
