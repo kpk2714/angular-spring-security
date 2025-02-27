@@ -17,7 +17,7 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  loginData : any = new LoginRequest();
+  loginData : any = new LoginRequest(false);
 
   login(loginTemp : any) {
 
