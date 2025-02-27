@@ -243,7 +243,7 @@
 
           constructor(private http: HttpClient, private router: Router) {}
 
-          loginData : any = new LoginRequest();
+          loginData : any = new LoginRequest(false);
 
           login(loginTemp : any) {
 
@@ -329,6 +329,10 @@
         username! : string ;
         password! : string ;
         rememberMe!: boolean;
+
+        constructor(rememberMe : any) {
+            this.rememberMe = rememberMe;
+        }
     }
 
     export class AdminUser {
